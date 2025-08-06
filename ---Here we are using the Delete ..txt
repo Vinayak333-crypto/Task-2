@@ -1,0 +1,33 @@
+---Here we are using the Delete .
+---if we will use delete without where condition, all records from the table will be deleted, but the 
+---table structure remains intact.
+
+
+Select * from Student_Details
+
+---Here we are creating the copy of the table Student_Details as (#1 Student_Details) because if in case we don't Want to disturb the Original Table.
+
+select * into #1 from Student_Details
+
+select * from #1 
+
+Delete * from #1 
+
+Where Student_Name = 'Raj Mehra'
+
+Update Student_name = 'Raj Mehra' as 'Rajesh'
+
+
+---Truncate - delete all the records from the table but the structure of the table remains intact.
+
+
+select * from student_details
+
+select * into #2 from Student_details
+
+Truncate Table #2
+
+
+---Drop - all the records will be deleted plus table structure will also be removed
+
+Drop Table #2
